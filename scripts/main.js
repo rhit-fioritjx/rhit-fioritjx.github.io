@@ -15,4 +15,5 @@ function init_collapsible(){
       });
     } 
 }
+
 init_collapsible();

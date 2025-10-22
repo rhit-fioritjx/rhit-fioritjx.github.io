@@ -10,19 +10,79 @@
 		<h1>Hello, I'm Julian</h1>
 		<button type="button" class = "collapsible"><h2>My Projects<h2></button>
 		<div class="content">
-			<button type="button" class="collapsible"><h3>Evolution of Development on NK Fitness Landscapes</h3><h4>August 2022 - Present</h4></button>
+			<!-- 
+			<button type="button" class="collapsible"><h3>Title</h3><h4>Dates</h4></button>
+			<div class="content">
+			</div>
+			--> 
+			<button type="button" class="collapsible"><h3>SAD Neural Networks</h3><h4>Sep 2023-May 2024</h4></button>
 			<div class="content">
 				<p>
-					As part of my undergraduate studies at Rose Hulman, I am taking part in an undergraduate research project with Dr. Jason Yoder and my peer Jacob Ashworth. 
-					This research is using the NK Fitness Landscape model to simulate and increase our understanding of the interaction between Evolution and Development in the optimization of a population. 
-					This research is expanding on <a href="https://direct.mit.edu/isal/proceedings/isal/34/59/112288">the research</a> published in Artificial Life in 2022, by Yoder et.al. 
-					My work this year has thus produced significant performance improvements, dynamic landscapes, and greater summary statistics. 
-					We are planning to use these tools to study and improve the ways learning strategies can be developed for different types of scenario. 
-					The research may be useful both for biological fields and machine learning applications.
+					This project was my senior thesis capstone project for my degree at Rose-Hulman.
+					I worked on this project with a team of 3 other students, David Gottlieb, Dylan Lutrell, and Helen Wang, under the supervision of Dr. Yoder.
+					In this project we ambitiously tried to do three difficult things simultaniously, hoping that they would synergize. 
+					These three dimensions to the research were:
 				</p>
+				<ul>
+					<li>Improving upon developmental neural architectures</li>
+					<li>Using uncertainty estimation to guide learning</li>
+					<li>Using adaptive hyperparameter optimization to adjust learning parameters on the fly</li>
+				</ul> 
+				<p>
+					While we all influenced all parts of the system, I was mainly responisble for the adaptive hyperparameter optimization feature.
+					This subsystem was initially inspired by my previous research with Dr. Yoder on <a href="#NKFL">developmental learning</a>.
+					Despite this inspiration the idea pivoted from an evolutionary system to a RL agent which recieved rewards based on the testing performance of the main system.
+					While a few experiments showed some promise, the overall system was not really able to compete with previous methods and no publication came of this research.
+					Despite the lack of success, I learned a lot from this experience about scope management, academic research, hyperparameter optimization and reinforcement learning.
+				</p>
+				<img src="images/SAD NN/FrameSkip.png" style="max-width: 20%;" title="Reward over time from training metalearning agents">
+				<img src="images/SAD NN/sadNNResults.png" style="max-width: 40%;" title="Adjustment of hyperparameters by meta agent">
+
+			</div>
+			<button type="button" class="collapsible" id="NKFL"><h3>Evolution of Development on NK Fitness Landscapes</h3><h4>Aug 2022 - May 2024</h4></button>
+			<div class="content">
+				<p>
+					In the 2022-23 school year, as part of my undergraduate studies at Rose Hulman, I took part in undergraduate research projects with Dr. Jason Yoder and my peer Jacob Ashworth. 
+					In this research we used the NK Fitness Landscape model to simulate and increase our understanding of the interaction between Evolution and Development in population optimization. 
+					This research is expanded on <a href="https://direct.mit.edu/isal/proceedings/isal/34/59/112288">the research</a> published in Artificial Life in 2022, by Yoder et.al. 
+					I worked to produce significant performance improvements, dynamic landscapes, a wider variety of summary statistics, and a more robust architecture. 
+					We used tools to study the ways in which learning strategies develop in a variety of scenarios, and to learn about how various aspects of the environement impact the evolution of development. 
+					I then worked with Dr. Yoder and Jacob Ashworth to document and publish <a href="https://direct.mit.edu/isal/proceedings/isal2023/35/113/116823">our work</a> in Artificial Life 2023.
+					This work also partially served as inspiration for my senior thesis research on dynamic hyperparameter optimization in machine learning.
+				</p>
+				<img src="images/NKFL/Redo_of_Single.png" style="max-width: 20%;" title="Performance of different population types on NK landscapes">
 				<img src="images/NKFL/ALL.png" style="max-width: 20%;" title="Evolved fitnesses on dynamic landscapes">
 				<img src="images/NKFL/PointSwapHamming.png" style="max-width: 20%;" title="Diveristy of developmental programs when encountering sudden landscape change">
 				<img src="images/NKFL/Randomize every time.png" style="max-width: 20%;" title="Running developmental strategies evolved on dynamic landscapes on novel landscapes">
+				<p>
+					During the 2023-24 school year I continued working on this project with Dr. Yoder and Jacob Ashworth, as well as two new team members, Alexa Renner, and Émile Marois.
+					Due to my ongoing senior thesis project I took on a somewhat more advisory position, though I remained an integral member of the team as we used the model framework to research genetic exaptations.
+					In this work we designed a variety of new techniques with which to emulate real world evolution and custom fitness landscapes on which to test for exaptations. 
+					The team then worked together to get <a href="https://direct.mit.edu/isal/proceedings/isal2024/36/2/123480">this research</a> was published in Artificial Life 2024.
+				</p>
+				<img src="images/NKFL/Blocks.png" style="max-width: 20%;" title="Diagram of Indirect Encoding Scheme">
+				<img src="images/NKFL/CrucialMutations.png" style="max-width: 20%;" title="Mutations Neccesary to count as Exaptation">
+				<img src="images/NKFL/LineageGraph(seed329874).png" style="max-width: 20%;" title="Fitness of a Lineage displaying Exaptation">
+				
+			</div>
+			<button type="button" class="collapsible"><h3>Rose Chat</h3><h4>Jan-May 2024</h4></button>
+			<div class="content">
+				<p>
+					In this project I worked with a relatively large team (for a school project) of about 10-20 students with direct oversight from Dr. Shibberu and Dr. Boutell to produce an AI chatbot which could assist freshmen with certain advisory tasks.
+					The goal of this project was to alliveate some of the existing pressure on freshman advisors by redirecting some more easily answerable questions to a chatbot. 
+					To ensure the utility of this system, we conducted some software requirements engineering to learn from freshmen and advisors what would be neccesary from such a system.
+					This system used RAG and system prompting to retrieve information relevant to student queries to ensure more reliable answers to student questions.
+					Unfortunately despite our teams best efforts we were unable to prevent the system from hallucintating or providing incorrect feedback.
+					This may is likely due to intentionally using smaller models for budgetary reasons and attempting to compensate using RAG and prompting.
+					While the system never saw widespread use or adoption due to concerns over reliablity of responses, working on this project and with this team taught me a lot about working with LLM integrated systems.
+				</p>
+				<img src="images/Advising/hallucination.png"  title="A hallucination found during testing which provided incorrect responses to the user">
+			</div>
+			<button type="button" class="collapsible"><h3>Linkedin Salary Prediction</h3><h4>Oct-Nov 2023</h4></button>
+			<div class="content">
+				As a final project for a deep learning course at Rose Hulman, I worked with a team to predict missing salary information from linkedin job postings from a Kaggle Dataset.
+				Due to the formatings of the postings we had to do a lot of data preprocessing to make the dataset usable, such as filtering out inaccurate data, vectorizing text features, one hot and multi-hot encodings and PCA.
+				In the end using a deep learning model with L2 regularization, masking, custom loss functions, and batch normalization we were able to get a reasonably accurate prediction of salaries given incomplete data.
 			</div>
 			<button type="button" class="collapsible"><h3>UML Diagram Generator + Annotator</h3><h4>May 12-24 2022</h4></button>
 			<div class="content">
@@ -32,7 +92,7 @@
 				</p>
 				<img src="images/UML/Output.svg" style="max-width: 60%;" title="Annotated UML diagram of the design generated by the program">
 			</div>
-			<button type="button" class="collapsible"><h3>Queue</h3><h4>Feburary 8-18 2022</h4></button>
+			<button type="button" class="collapsible"><h3>Queue</h3><h4>Feb 8-18 2022</h4></button>
 			<div class="content">
 				<p>
 					<a href="https://queue-prioritizer.web.app/queue">Queue</a> is a web application dedicated to helping users prioritize their tasks using computer science principles and the priority queue data structure. 
@@ -79,7 +139,7 @@
 				<img src="images/GeneticAlgorithm/image1.PNG" style="max-width: 30%;" title="Plot of statistics at the beginning of evolution">
 				<img src="images/GeneticAlgorithm/image5.PNG" style="max-width: 30%;" title="Plot of statistics on different problem">
 			</div>
-			<button type="button" class="collapsible"><h3>Processor Project</h3><h4>November 10-17 2022</h4></button>
+			<button type="button" class="collapsible"><h3>Processor Project</h3><h4>Nov 10-17 2022</h4></button>
 			<div class="content">
 				<p>
 					For Computer Architecture the final project was to create a functioning processor with a generalizable instruction set. 
