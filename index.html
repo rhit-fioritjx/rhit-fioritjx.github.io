@@ -15,6 +15,35 @@
 			<div class="content">
 			</div>
 			--> 
+			<button type="button" class="collapsible"><h3>Computational Modeling of Political Science</h3><h4>May 2024 - Present</h4></button>
+			<div class="content">
+				<p>In this project I used my experience with agent based and swarm modelling to build a system which emulates elections in a spatial voter model.
+				With this simple simulation I was able to capture interesting data about how electoral systems behave under certain assumptions.
+				I used these data which I had collected to develop some basic mathematical models of how variables such as population, dimensionality, and number of candidates impact the long run stability of electoral systems.
+				I then used this research to create a youtube video covering my results and theories.
+				I intend to continue to work on this research and this model, however I have found that the mathematical modelling of more complex voting systems is incredibly difficult pushing back further publications.
+				</p>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/Jk5Sle7Or1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+			<button type="button" class="collapsible"><h3>Gerrymandering Puzzle Game</h3><h4>Oct 2025</h4></button>
+			<div class="content">
+				<p>
+				Inspired by these two videos (<a href="https://youtu.be/WQQrFOgRjDg">1</a>,<a href="https://youtu.be/SvdJWcijn4M">2</a>) by the youtube channel Deckard, I decided to create a program which could automatically generate these puzzles to be played.
+				While using a grid would probably have provided additional features to the graph to allow for a faster puzzle generation algorithm, I wanted the framework to be flexible enough to allow for more complex graphs.
+				The algorithm is relatively simple:
+				<ul>
+					<li>Generate a random set of n subgraphs which satisfy the criteria</li>
+					<li>Assign the smallest m subgraphs to the party the user will play as where m is the smallest number of districts needed to win</li>
+					<li>Randomly assign k of the nodes in that subgraph to the user party where k is the smallest number required to win, then fill the remaining with competing parties</li>
+					<li>In the remaining districts assign a random party such that the user party will not lose</li>
+					<li>Assign the nodes such that the random party wins</li>
+				</ul>
+				<a href="https://github.com/rhit-fioritjx/gerrymandering_game">This game</a> is currently only playable in a terminal with a text based UI as it is something I threw together quickly, but I plan to make a more usable web UI which can be played here.
+				</p>
+				<img src="images/gerrymandering game/text_ui.png" style="max-width: 20%;" title="Text base UI for the game">
+				<img src="images/gerrymandering game/victory.png" style="max-width: 20%;" title="Completed gerrymandering puzzle">
+
+			</div>
 			<button type="button" class="collapsible"><h3>SAD Neural Networks</h3><h4>Sep 2023-May 2024</h4></button>
 			<div class="content">
 				<p>
@@ -77,6 +106,33 @@
 					While the system never saw widespread use or adoption due to concerns over reliablity of responses, working on this project and with this team taught me a lot about working with LLM integrated systems.
 				</p>
 				<img src="images/Advising/hallucination.png"  title="A hallucination found during testing which provided incorrect responses to the user">
+			</div>
+			<button type="button" class="collapsible"><h3>PictureMath</h3><h4>Jan-May 2024</h4></button>
+			<div class="content">
+				<p>
+					In this project I worked with collaborators Helen Wand, Dylan Lutrell, and Ian Liu to develop a system which could evaluate and solve handwritten mathematical expressions as part of our image recognition course.
+					As the course had covered a wide range of historical and modern approaches we used several different methods to conduct the HMRE.
+					This problem is somewhat more complex than basic OCR, as you are generating a structured sequence of symbols which may not be clearly vertically delimited.
+					For this project we used 3 different datasets CROHME with 80k individual characters, a Kaggle handwritten characters dataset, and a dataset of 3200 of our own handwritten digits.
+				</p>
+				<p>
+					For our more traditional approach, we split the process into a pipeline: separating the characters, classifying the characters, and then feeding that to a CAS system.
+					To split the characters we simply created bounding boxes on connected components, and combined them based on vertical overlap. 
+					The decision to simplify to use vertically deliniated characters was made for the sake of development time given we only had a few weeks to complete the project.
+					We then trained a CNN on our character datasets which had reasonable performance for the scope of our project (.87 train, .69 test).
+					This setup allowed us to feed our expressions into latex2sympy to solve the expressions.
+				</p>
+				<p>
+					Our more modern approach was to use the TROCR model published to Huggingface by Microsoft.
+					We then finetuned this model on the CROHME dataset to make it better suited for our usecase.
+					While this approach was very effective it was also quite resource intensive and so would not be practical for something like on device computation.
+				</p>
+				<img src="images/PictureMath/bounding.png" style="max-width: 20%;" title="example of bounding box generation">
+				<img src="images/PictureMath/fine tuning.png" style="max-width: 20%;" title="example of CNN model performance before and after fine tuning on our handwriting">
+				<img src="images/PictureMath/demo.png" style="max-width: 20%;" title="CNN approach reading an expression in demo">
+				<img src="images/PictureMath/fine_tune.png" style="max-width: 20%;" title="Loss plot from fine tuning TROCR on CROHME">
+				<img src="images/PictureMath/complex expression.png" style="max-width: 20%;" title="Fine tuned TROCR handling a complex expression">
+				
 			</div>
 			<button type="button" class="collapsible"><h3>Linkedin Salary Prediction</h3><h4>Oct-Nov 2023</h4></button>
 			<div class="content">
@@ -165,14 +221,25 @@
 		</div>
 		<button type="button" class="collapsible"><h2>Work Experience</h2></button>
 		<div class="content">
-			<button type="button" class="collapsible"><h3>Teaching Assistant</h3><h4>Rose Hulman Institute of Technology</h4></button>
+			<button type="button" class="collapsible"><h3>Teaching Assistant</h3><h4>Rose Hulman Institute of Technology (Nov-Feb 2023, Nov 2023-May 2024)</h4></button>
 			<div class="content">
 				<p>
 					During the winter quarter of the 2022-23 school year I graded for the software design course at rose hulman. 
 					This involves understanding the principles of good software design, and using that understanding to make judgements about the quality of student work.
 				</p>
+				<p>
+					Winter and spring quarters of the 2023-24 school year I graded and TAed for the theory of computation course.
+					This involved grading, and providing feedback on student work, requiring intimate knowledge of the course materials.
+					I also hosted weekly office hours in which I would assist students with their coursework without directly giving the students the answers.
+				</p>
 			</div>
-			<button type="button" class="collapsible"><h3>Haul Truck Operator</h3><h4>AAA Monroe Rock</h4></button>
+			<button type="button" class="collapsible"><h3>Software Development Intern</h3><h4>AAA Monroe Rock (May-Aug 2023)</h4></button>
+			<div class="content">
+				<p>
+					For the summer of 2023 I worked to improve the user interface of the ticketing system used by AAA monroe rock, with the objective of improving the clunky workflow resultant of their outdated ticketing software.
+				</p>
+			</div>
+			<button type="button" class="collapsible"><h3>Haul Truck Operator</h3><h4>AAA Monroe Rock (Summer 2021)</h4></button>
 			<div class="content">
 				<p>
 					I worked as a haul truck operator for an inert waste disposal site during the summer of 2021.
@@ -182,10 +249,10 @@
 		<button type="button" class="collapsible"><h2>About Me</h2></button>
 		<div class="content">
 			<p>
-				I am Julian Fiorito, a Computer Science Undergraduate at Rose-Hulman Institute of Technology. 
+				I am Julian Fiorito, a Computer Science graduate from Rose-Hulman Institute of Technology. 
 				Outside of Work/School I am commonly found hiking or camping, I love nature and spend as much time in it as possible. 
 				When I cannot be hiking I am often reading epic fantasy novels from authors such as Brandon Sanderson and Robert Jordan.
-				I hope to be able to oneday use my skillset to help us through the many struggles we are coming to face.	
+				I hope to be able to oneday use my skills to help understand and improve the world which we find ourselves in. 
 			</p>
 			<img src="images/Personal/Odysseus Woods.jpg" style="max-width: 15%;" title="Odysseus and I on the Poo Poo Point Trail">
 			<img src="images/Personal/Odysseus Rock.jpg" style="max-width: 30%;" title="Odysseus and I on the Perry Creek Trail">
